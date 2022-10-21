@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ProLab Tools</title>
+	<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+	<div class='header'>
+	<table align="center">
+		<tr>
+			<td>
+				<img id='logo' src="static/imgs/logo.png" alt="logo_prolab">
+			</td>
+			<td>
+				
+			</td>
+		</tr>
+	</table>
+	</div>
+
+	<table align='center' class="out-table">
+		<tr>
+			<td>
+				<table align="center" class="in-table">
+					<tr>
+						<th><h3>Resíduo</h3></th>	
+						<form action="#" method="post">
+							<tr><td><p>Massa Inicial Bequer (Tara) [g]</p><input type="number" step="0.001" lang="en-US" name="res_tara"></td></tr>
+							<tr><td><p>Volume Amostra [mL]</p><input type="number" step="0.001" lang="en-US" name="res_volume"></td></tr>
+							<tr><td><p>Massa final [g]</p><input type="number" step="0.001" lang="en-US" name="res_final"></td></tr>
+							<tr><td><input type="submit" value="Calcular" name="Calcular"></td></tr>
+							
+							<tr><td>
+							{%if res_resultado is number%}
+								<p class=resultado>{{res_resultado}}mg/L de Resíduo após Evaporação</p>
+							{% else %}
+								{{res_resultado}}
+							{%endif%}
+							<tr><td>
+
+						</form>
+					</tr>
+				</table>
+			</td>
+			<td>
+			<table align="center" class="in-table">
+					<tr>
+						<th><h3>Umidade</h3></th>
+						<form action="#" method="post">
+							<tr><td><p>Massa da Cápsula Vazia (Tara) [g]</p><input type="number" step="0.001" lang="en-US" name="umi_tara"></td></tr>
+							<tr><td><p>Massa da amostra [g]</p><input type="number" step="0.001" lang="en-US" name="umi_massa1"></td></tr>
+							<tr><td><p>Massa final (cápsula+amostra) [g]</p><input type="number" step="0.001" lang="en-US" name="umi_massa2"></td></tr>
+							<tr><td><input type="submit" value="Calcular" name="Calcular"></td></tr>
+							
+							<tr><td>
+							{%if umi_resultado is number%}
+								<p class=resultado>Teor de Umidade: {{umi_resultado}}%</p>
+							{% else %}
+								{{umi_resultado}}
+							{%endif%}
+							</tr></td>
+
+						</form>
+					</tr>				
+				</table>
+			</td>
+			<td>
+				
+				<table align="center" class="in-table">
+					<tr>
+						<th><h3>Cinzas</h3></th>
+						<form action="#" method="post">
+							<tr><td><p>Massa da Cápsula Vazia (Tara) [g]</p><input type="number" step="0.001" lang="en-US" name="cin_tara"></td></tr>
+							<tr><td><p>Massa da amostra [g]</p><input type="number" step="0.001" lang="en-US" name="cin_massa1"></td></tr>
+							<tr><td><p>Massa final (cápsula+amostra) [g]</p><input type="number" step="0.001" lang="en-US" name="cin_massa2"></td></tr>
+							<tr><td><input type="submit" value="Calcular" name="Calcular"></td></tr>
+							
+							<tr><td>
+							{%if cin_resultado is number%}
+								<p class=resultado>Teor de Cinzas: {{cin_resultado}}%</p>
+							{% else %}
+								{{cin_resultado}}
+							{%endif%}
+							</td></tr>
+
+						</form>
+					</tr>				
+				</table>
+
+
+			</td>			
+		</tr>		
+	</table>
+	<table align="center" class="out-table">
+		<tr>
+			<td>
+				<table align="center" class="in-table">				
+					<tr>
+						<th><h3>Nitrato como N</h3></th>
+						<form action="#" method="post" enctype="multipart/form-data">
+							<tr><td><em>Fazer upload do arquivo csv do Shimadzu</em></td></tr>						
+							<tr><td><input type="file" name="nitra_csv_file"></td></tr>
+							<tr><td><input type="submit" value="Calcular" name="Calcular2"></td></tr>
+
+							<tr><td>
+							{%if nitra_resultado is number%}
+								<p class=resultado>{{nitra_resultado | safe }}</p></td></tr>
+							{% else %}
+								{{nitra_resultado}}
+							{%endif%}
+							</td></tr>
+						</form>						
+					</tr>
+				</table>
+			</td>
+			<td>
+				<table align="center" class="in-table">				
+					<tr>
+						<th><h3>Nitrito como N</h3></th>
+						<form action="#" method="post" enctype="multipart/form-data">
+							<tr><td><em>Fazer upload do arquivo bruto 'csv' do Shimadzu</em></td></tr>						
+							<tr><td><input type="file" name="nitri_csv_file"></td></tr>
+							<tr><td><input type="submit" value="Calcular" name="Calcular2"></td></tr>
+
+							<tr><td>
+							{%if nitri_resultado is number%}
+								<p class=resultado>{{nitri_resultado | safe }}</p>
+							{% else %}
+								{{nitri_resultado}}
+							{%endif%}
+						</td></tr> 
+						</form>						
+					</tr>
+				</table>
+			</td>	
+		</tr>
+	</table>
+	<button ><a href="/">Limpar</a></button>
+
+	<footer><b>ProLab Biotecnologia ©</b> • <em>{{year}}</em> • Desenvolvido Por: <em>Jeferson Magalhães</em></footer>
+
+</body>
+</html>
