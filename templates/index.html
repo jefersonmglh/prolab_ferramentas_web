@@ -20,7 +20,7 @@
 		</table>
 	</div>
 
-	<table align='center' class="out-table">
+	<div class="out"><table align='center' class="out-table">
 		<tr>
 			<td>
 				<table align="center" class="in-table">
@@ -89,8 +89,8 @@
 				</table>
 			</td>			
 		</tr>		
-	</table>
-	<table align="center" class="out-table">
+	</table></div>
+	<div class="out"><table align="center" class="out-table">
 		<tr>
 			<td>
 				<table align="center" class="in-table">				
@@ -133,8 +133,8 @@
 				</table>
 			</td>	
 		</tr>
-	</table>
-	<table align="center" class="out-table">
+	</table></div>
+	<div class="out"><table align="center" class="out-table">
 		<tr>
 			<td>
 				<table align="center" class="in-table">
@@ -142,19 +142,21 @@
 						<th><h3>Soluções Ácidas</h3></th>
 						<form action="#" method="post" enctype="multipart/form-data">
 							<tr>
-								<td>
-
-								</td>
-
+								<td><label for="sol_acido">Escolha o ácido desejado:</label>
+									<select name="sol_acido" id="sol_acido">
+									  <option value="sulfurico">Ácido Sulfúrico</option>
+									  <option value="cloridrico">Ácido Clorídrico</option>
+									  <option value="nitrico">Ácido Nítrico</option>
+									</select></td>
 							</tr>
-							<tr><td><input type="file" name="nitra_csv_file"></td></tr>
+							<tr><td><p>Volume da Solução Final[mL]</p><input type="number" step="0.01" lang="en-US" name="sol_volume"></td></tr>
+							<tr><td><p>Concentração da Solução Final [mol/L]</p><input type="number" step="0.1" lang="en-US" name="sol_concentracao"></td></tr>
 							<tr><td><input type="submit" value="Calcular" name="Calcular2"></td></tr>
-
 							<tr><td>
-							{%if nitra_resultado is number%}
-								<p class=resultado>{{nitra_resultado | safe }}</p></td></tr>
+							{%if sol_resultado is number%}
+								<p class=resultado>{{sol_resultado}} mL de {{acido_nome}} para esta solução.</p></td></tr>
 							{% else %}
-								{{nitra_resultado}}
+								{{sol_resultado}}
 							{%endif%}
 							</td></tr>
 						</form>
@@ -162,9 +164,9 @@
 				</table>
 			</td>
 		</tr>
-	</table>
+	</table></div>
 
-	<button ><a href="/">Limpar</a></button>
+	<div class="limpar_b"><button><a href="/">Limpar</a></button></div>
 
 	<footer><b>ProLab Biotecnologia ©</b> • <em>{{year}}</em> • Desenvolvido Por: <em>Jeferson Magalhães</em></footer>
 

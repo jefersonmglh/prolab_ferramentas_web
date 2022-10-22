@@ -3,6 +3,7 @@ from mods.nitrato_como_n import Nitrato_N
 from mods.nitrito_como_n import Nitrito_N
 from mods.teor_de_umidade import Umidade
 from mods.teor_de_cinzas import Cinzas
+from mods.solucoes_acidas import *
 import datetime
 
 from flask import Flask, redirect, url_for, render_template, request
@@ -81,6 +82,30 @@ def init():
 				cin_resultado = '---ERRO: VALORES---'
 
 			return render_template('index.html', year=year, cin_resultado=cin_resultado)
+
+
+		elif 'sol_acido' in request.form and 'sol_volume' in request.form and 'sol_concentracao' in request.form:
+
+			try:
+				sol_acido = request.form["sol_acido"]
+				sol_volume = float(request.form["sol_volume"])
+				sol_concentracao = float(request.form["sol_concentracao"])
+
+				if sol_acido == "sulfurico":
+					sol_acido_data = Sulfurico().data()
+				elif sol_acido == "cloridrico":
+					sol_acido_data = Cloridrico().data()
+				else:
+					sol_acido_data = Nitrico().data()
+
+				sol_acido_nome = sol_acido_data.get('nome')
+				sol_resultado = Solucoes_Acidas(acid_data=sol_acido_data, volume_final_sol=sol_volume, concentracao_sol=sol_concentracao).calc()
+
+			except:
+				sol_resultado = '---ERRO: VALORES---'
+				sol_acido_nome = ''
+
+			return render_template('index.html', year=year, sol_resultado=sol_resultado, acido_nome=sol_acido_nome)
 
 	else:
 		return render_template("index.html", year=year)

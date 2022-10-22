@@ -3,7 +3,7 @@ body {
 	font-weight: bold;
 	background-image: linear-gradient(to bottom right, #002B5B, #2B4865, #256D85, #8FE3CF);
 	color: #E7F6F2;
-}	
+}
 
 
 h3{
@@ -16,26 +16,25 @@ h3{
 
 
 button {
-  background-color: #8FE3CF;  
+  background-color: #8FE3CF;
   color: white;
   border: none;
   padding: 10px 10px;
-  text-align: center;  
-  display: inline-block;
+  text-align: center;
   font-size: 32px;
   font-weight: bold;
   position: relative;
   width: 300px;
-  left: 500px;
+  left: 750px;
 
 }
 
 input[type=submit] {
-  background-color: #002B5B;  
+  background-color: #002B5B;
   color: #8FE3CF;
   border: none;
   padding: 10px 20px;
-  text-align: center;  
+  text-align: center;
   display: inline-block;
   font-size: 16px;
   font-weight: bold;
@@ -43,8 +42,8 @@ input[type=submit] {
 
 input[type=file] {
   background-image: linear-gradient(to bottom right, #002B5B, #2B4865, #256D85);
-  color: #8FE3CF;  
-  text-align: center;   
+  color: #8FE3CF;
+  text-align: center;
   font-size: 16px;
   font-weight: bold;
 }
@@ -59,7 +58,7 @@ input[type=file] {
 	border: 3px outset;
 	border-color: #8FE3CF;
 	border-radius: 10px;
-	text-align: center;	
+	text-align: center;
 }
 
 th{
@@ -78,14 +77,13 @@ input[type=text]:focus {
 	opacity: 0.7;
 	background-color: whitesmoke;
 	border: 6px solid #555;
-	
+
 }
 
-footer {	  
+footer {
   text-align: center;
-  padding: 10px; 
+  padding: 10px;
   color: black;
   font-size: 10px;
   opacity: 0.7;
 }
-
