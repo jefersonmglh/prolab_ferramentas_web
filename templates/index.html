@@ -8,16 +8,16 @@
 </head>
 <body>
 	<div class='header'>
-	<table align="center">
-		<tr>
-			<td>
-				<img id='logo' src="static/imgs/logo.png" alt="logo_prolab">
-			</td>
-			<td>
-				
-			</td>
-		</tr>
-	</table>
+		<table align="center">
+			<tr>
+				<td>
+					<img id='logo' src="static/imgs/logo.png" alt="logo_prolab">
+				</td>
+				<td>
+
+				</td>
+			</tr>
+		</table>
 	</div>
 
 	<table align='center' class="out-table">
@@ -67,7 +67,6 @@
 				</table>
 			</td>
 			<td>
-				
 				<table align="center" class="in-table">
 					<tr>
 						<th><h3>Cinzas</h3></th>
@@ -88,8 +87,6 @@
 						</form>
 					</tr>				
 				</table>
-
-
 			</td>			
 		</tr>		
 	</table>
@@ -137,6 +134,36 @@
 			</td>	
 		</tr>
 	</table>
+	<table align="center" class="out-table">
+		<tr>
+			<td>
+				<table align="center" class="in-table">
+					<tr>
+						<th><h3>Soluções Ácidas</h3></th>
+						<form action="#" method="post" enctype="multipart/form-data">
+							<tr>
+								<td>
+
+								</td>
+
+							</tr>
+							<tr><td><input type="file" name="nitra_csv_file"></td></tr>
+							<tr><td><input type="submit" value="Calcular" name="Calcular2"></td></tr>
+
+							<tr><td>
+							{%if nitra_resultado is number%}
+								<p class=resultado>{{nitra_resultado | safe }}</p></td></tr>
+							{% else %}
+								{{nitra_resultado}}
+							{%endif%}
+							</td></tr>
+						</form>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
 	<button ><a href="/">Limpar</a></button>
 
 	<footer><b>ProLab Biotecnologia ©</b> • <em>{{year}}</em> • Desenvolvido Por: <em>Jeferson Magalhães</em></footer>

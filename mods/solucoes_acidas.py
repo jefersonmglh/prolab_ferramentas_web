@@ -1,52 +1,61 @@
-def volume():
-    massamolar, densidade, pureza = acido_variaveis()
-    volume_final = volume_solucao()
-    concentracao = concentracao_solucao()
-    calculo_acido(massamolar, concentracao, volume_final, pureza, densidade)
+class Sulfurico:
+    def __init__(self):
+
+        self.massamolar = 98.079
+        self.densidade = 1.83
+        self.pureza = 98
+    def data(self):
+        return {
+            "massa_molar": self.massamolar,
+            "densidade": self.densidade,
+            "pureza": self.pureza
+        }
+
+class Cloridrico:
+    def __init__(self):
+
+        self.massamolar = 36.458
+        self.densidade = 1.18
+        self.pureza = 37
+    def data(self):
+        return {
+            "massa_molar": self.massamolar,
+            "densidade": self.densidade,
+            "pureza": self.pureza
+        }
+
+class Nitrico():
+    def __init__(self):
+
+        self.massamolar = 63.01
+        self.densidade = 1.51
+        self.pureza = 65
+    def data(self):
+        return {
+            "massa_molar": self.massamolar,
+            "densidade": self.densidade,
+            "pureza": self.pureza
+        }
 
 
-def acido_variaveis():
-    acido = selecionar_acido()
-    if acido == 1:
-        massamolar = 98.079
-        densidade = 1.83
-        pureza = 98
-        print('Você selecionou o Ácido Sulfúrico.\n')
-        return massamolar, densidade, pureza
-    elif acido == 2:
-        massamolar = 36.458
-        densidade = 1.18
-        pureza = 37
-        print('Você selecionou o Ácido Clorídrico.\n')
-        return massamolar, densidade, pureza
-    elif acido == 3:
-        massamolar = 63.01
-        densidade = 1.51
-        pureza = 65
-        print('Você selecionou o Ácido Nítrico.\n')
-        return massamolar, densidade, pureza
 
 
-def selecionar_acido():
-    acido = int(input('\nDigite o número correspondente ao ácido utilizado no preparo da solução:'
-                '\n1 - Ácido Sulfúrico. \n2 - Ácido Clorídrico. \n3 - Ácido Nítrico.\n'))
-    return acido
+class Solucoes_Acidas:
+
+    def __init__(self, acid_data,volume_final_sol, concentracao_sol):
+        self.massa_molar = acid_data.get('massa_molar')
+        self.densidade = acid_data.get('densidade')
+        self.pureza = acid_data.get('pureza')
+        self.volume_f = volume_final_sol
+        self.concentracao = concentracao_sol
+
+    def calc(self):
+        volume_i_acid = round(((100 * self.massa_molar * self.concentracao * self.volume_f) / (self.pureza * self.densidade)), 2)
+        return volume_i_acid
 
 
-def volume_solucao():
-    volume_final = float(input('Qual o volume desejado da solução final (em Litros)? '))
-    return volume_final
 
 
-def concentracao_solucao():
-    concentracao = float(input('Qual é a concentração dessa solução (em mol/L)? '))
-    return concentracao
 
 
-def calculo_acido(massamolar, concentracao, volume_final, pureza, densidade):
-    v = ((100 * massamolar * concentracao * volume_final) / (pureza * densidade))
-    print(f'Para fazer {volume_final} litros da solução, você precisará de %.2f' % v + 'mL do ácido desejado')
 
-
-if __name__ == '__main__':
-    volume()
