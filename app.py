@@ -12,8 +12,7 @@ app = Flask(__name__)
 year = datetime.datetime.now().year
 
 @app.route('/', methods=["POST", "GET"])
-def init():
-	res_resultado = ""
+def init():	
 	if request.method == "POST":
 
 		if 'res_tara' in request.form and 'res_volume' in request.form and 'res_final' in request.form:

@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ProLab Tools</title>
 	<link rel="stylesheet" href="static/style.css">
+	<link rel="icon" type="image/x-icon" href="static/imgs/icon.png">
 </head>
 <body>
 	<div class='header'>
@@ -25,11 +26,11 @@
 			<td>
 				<table align="center" class="in-table">
 					<tr>
-						<th><h3>Resíduo</h3></th>	
+						<th><h3>Teor de Resíduo</h3></th>	
 						<form action="#" method="post">
-							<tr><td><p>Massa Inicial Bequer (Tara) [g]</p><input type="number" step="0.001" lang="en-US" name="res_tara"></td></tr>
-							<tr><td><p>Volume Amostra [mL]</p><input type="number" step="0.001" lang="en-US" name="res_volume"></td></tr>
-							<tr><td><p>Massa final [g]</p><input type="number" step="0.001" lang="en-US" name="res_final"></td></tr>
+							<tr><td><p>Massa Inicial Bequer (Tara) [g]</p><input type="number" step="0.0001" lang="en-US" name="res_tara"></td></tr>
+							<tr><td><p>Volume Amostra [mL]</p><input type="number" step="0.01" lang="en-US" name="res_volume"></td></tr>
+							<tr><td><p>Massa final [g]</p><input type="number" step="0.0001" lang="en-US" name="res_final"></td></tr>
 							<tr><td><input type="submit" value="Calcular" name="Calcular"></td></tr>
 							
 							<tr><td>
@@ -47,7 +48,7 @@
 			<td>
 			<table align="center" class="in-table">
 					<tr>
-						<th><h3>Umidade</h3></th>
+						<th><h3>Teor de Umidade</h3></th>
 						<form action="#" method="post">
 							<tr><td><p>Massa da Cápsula Vazia (Tara) [g]</p><input type="number" step="0.001" lang="en-US" name="umi_tara"></td></tr>
 							<tr><td><p>Massa da amostra [g]</p><input type="number" step="0.001" lang="en-US" name="umi_massa1"></td></tr>
@@ -69,7 +70,7 @@
 			<td>
 				<table align="center" class="in-table">
 					<tr>
-						<th><h3>Cinzas</h3></th>
+						<th><h3>Teor de Cinzas</h3></th>
 						<form action="#" method="post">
 							<tr><td><p>Massa da Cápsula Vazia (Tara) [g]</p><input type="number" step="0.001" lang="en-US" name="cin_tara"></td></tr>
 							<tr><td><p>Massa da amostra [g]</p><input type="number" step="0.001" lang="en-US" name="cin_massa1"></td></tr>
@@ -168,7 +169,7 @@
 
 	<div class="limpar_b"><button><a href="/">Limpar</a></button></div>
 
-	<footer><b>ProLab Biotecnologia ©</b> • <em>{{year}}</em> • Desenvolvido Por: <em>Jeferson Magalhães</em></footer>
+	<footer><b>ProLab Biotecnologia ©</b> • <em>{{year}}</em> • <b>Desenvolvido Por:</b> <em>Jeferson Magalhães</em></footer>
 
 </body>
 </html>
